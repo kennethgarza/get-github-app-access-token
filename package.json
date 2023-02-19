@@ -1,0 +1,15 @@
+{
+    "name": "get_gh_access_token",
+    "type" : "module",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {},
+    "dependencies": {
+      "@actions/core": "^1.9.1",
+      "axios": "^0.27.2",
+      "jsonwebtoken": "^9.0.0"
+    },
+    "author": "",
+    "license": "ISC"
+  }
