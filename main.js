@@ -6,7 +6,6 @@ const { getInput, setOutput, info, setFailed } = core;
 const { sign } = jwt;
 const { post } = axios;
 
-// variables
 const ghAppId       = getInput("gh_app_id");
 const ghInstallId   = getInput("gh_install_id");
 const ghPemFile     = getInput("gh_pem_file");
