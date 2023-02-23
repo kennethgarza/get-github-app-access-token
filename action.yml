@@ -1,0 +1,20 @@
+name: Get Github Access Token
+description : Get Github Access Token
+inputs:
+  gh_app_id:
+    description: the id of the app to use to get the access token
+    required: yes
+
+  gh_install_id: 
+    description: the install id of the app to get the access token
+    required: yes
+
+  gh_pem_file:
+    description: the private pem file (this is a password, put it in a github secret)
+    required: yes
+outputs:
+  TOKEN:
+    description: the temp gh auth token to use
+runs:
+  using: node16
+  main: main.js

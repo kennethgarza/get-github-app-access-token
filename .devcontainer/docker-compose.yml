@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  dev_env:
+    image: node:16
+    environment:
+      INPUT_GH_APP_ID     : 123456
+      INPUT_GH_INSTALL_ID : 9876543
+      INPUT_GH_PEM_FILE   : |
+        PEM HERE
+    command: sleep infinity
+    volumes:
+      - ../:/src
+      
