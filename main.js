@@ -43,6 +43,10 @@ let main = async () => {
 
     let accessToken = accessTokenResults.token;
 
+    if (accessToken === null || accessToken === "") {
+        throw "Access Token is empty... please check your settings"
+    }
+
     setOutput('TOKEN', accessToken);
 }
 
