@@ -13,7 +13,7 @@ const ghPemFile     = getInput("gh_pem_file");
 let main = async () => {
     let payload = {
         iat: Math.floor(new Date().getTime() / 1000) - 60,
-        exp: Math.floor(new Date().getTime() / 1000) + (2 * 60),
+        exp: Math.floor(new Date().getTime() / 1000) + (5 * 60),
         iss: ghAppId
     };
 
