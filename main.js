@@ -2,13 +2,17 @@ import core     from "@actions/core";
 import jwt      from "jsonwebtoken";
 import axios    from "axios";
 
-const { getInput, setOutput, info, setFailed } = core;
+const { getInput, 
+        setOutput, 
+        exportVariable, 
+        info, 
+        setFailed } = core;
 const { sign } = jwt;
 const { post } = axios;
 
 const ghAppId       = getInput("gh_app_id");
 const ghInstallId   = getInput("gh_install_id");
-const ghPemFile     = getInput("gh_pem_file");
+const ghPemFile     = getInput("gh_pem_file") || Buffer.from(getInput("gh_pem_64")) || "";
 
 let main = async () => {
     let payload = {
@@ -48,6 +52,10 @@ let main = async () => {
     }
 
     setOutput('TOKEN', accessToken);
+
+    // new and improved, set this as an environment variable
+    exportVariable("GH_APP_ACCESS_TOKEN", accessToken);
+
 }
 
 main().then(() => {
