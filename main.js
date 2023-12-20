@@ -12,7 +12,9 @@ const { post } = axios;
 
 const ghAppId       = getInput("gh_app_id");
 const ghInstallId   = getInput("gh_install_id");
-const ghPemFile     = getInput("gh_pem_file") || Buffer.from(getInput("gh_pem_64")) || "";
+const ghPem64       = getInput("gh_pem_64");
+
+let ghPemFile = Buffer.from(ghPem64, "base64").toString("utf8")
 
 let main = async () => {
     let payload = {
@@ -54,7 +56,7 @@ let main = async () => {
     setOutput('TOKEN', accessToken);
 
     // new and improved, set this as an environment variable
-    exportVariable("GH_APP_ACCESS_TOKEN", accessToken);
+    exportVariable("GITHUB_APP_ACCESS_TOKEN", accessToken);
 
 }
 
