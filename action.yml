@@ -9,8 +9,8 @@ inputs:
     description: the install id of the app to get the access token
     required: yes
 
-  gh_pem_file:
-    description: the private pem file (this is a password, put it in a github secret)
+  gh_pem_64:
+    description: the base64 encoded version of the private pem file (this is a password, keep it secret)
     required: yes
 outputs:
   TOKEN:

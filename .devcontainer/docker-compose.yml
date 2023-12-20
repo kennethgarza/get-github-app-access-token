@@ -3,10 +3,9 @@ services:
   dev_env:
     image: node:16
     environment:
-      INPUT_GH_APP_ID     : 123456
-      INPUT_GH_INSTALL_ID : 9876543
-      INPUT_GH_PEM_FILE   : |
-        PEM HERE
+      INPUT_GH_APP_ID     : 1234
+      INPUT_GH_INSTALL_ID : 5678
+      INPUT_GH_PEM_64     : base64 encoded pem here=
     command: sleep infinity
     volumes:
       - ../:/src
